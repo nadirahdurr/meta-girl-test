@@ -14,11 +14,6 @@ export default defineConfig({
     define: {
       // process: {env: {}},
     },
-    plugins: [
-      replace({
-        'process.env': 'import.meta.env',
-      })
-    ],
     rollupOptions: {
       plugins: [inject({ Buffer: ["buffer", "Buffer"] })],
       define: {
@@ -37,6 +32,10 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    resolve: { 
+      mainFields: ['browser', 'module', 'main']
+  
+    }
   },
   plugins: [react()],
   define: {
