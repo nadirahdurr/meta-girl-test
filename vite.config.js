@@ -12,8 +12,13 @@ import NodeGlobalsPolyfillPlugin from "@esbuild-plugins/node-globals-polyfill";
 export default defineConfig({
   build: {
     define: {
-      "process.env": process.env,
+      // process: {env: {}},
     },
+    plugins: [
+      replace({
+        'process.env': 'import.meta.env',
+      })
+    ],
     rollupOptions: {
       plugins: [inject({ Buffer: ["buffer", "Buffer"] })],
       define: {

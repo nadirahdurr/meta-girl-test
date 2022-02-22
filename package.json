@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.5",
     "@rollup/plugin-inject": "^4.0.4",
+    "@rollup/plugin-replace": "^3.1.0",
     "@walletconnect/web3-provider": "^1.7.1",
     "aos": "^2.3.4",
     "authereum": "^0.1.14",
