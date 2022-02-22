@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import Sound from "react-sound";
-// import MetaGirlAudio from "../assets/metagirl-audio/Sammy - Metagirl INSTRUMENTAL.mp3";
+import Sound from "react-sound";
+import MetaGirlAudio from "../assets/metagirl-audio/Sammy - Metagirl INSTRUMENTAL.mp3";
 import { FaPlay, FaStop } from "react-icons/fa";
 import { MetaCard } from "../components/metaCard";
 import { MetaCardTwo } from "../components/metaCardTwo";
@@ -32,7 +32,7 @@ const Header = () => {
           </p>
           <div className="text-[#515340] xl:text-[20px] text-[8px] md:mb-10" style={{ fontFamily: "Orbitron" }}> The Digital Heart Collection and Music NFT By Sammy Arriaga</div>
 
-          {/* <p className="max-w-xl my-5	md:mb-10 mx-auto text-xl text-[##f2e2d3]">
+          <p className="max-w-xl my-5	md:mb-10 mx-auto text-xl text-[##f2e2d3]">
             <button onClick={() => setIsPlaying(!isPlaying)}>
               {!isPlaying ? (
                 <FaPlay className="text-2xl text-[#231c0d] hover:text-[#515340]" />
@@ -47,7 +47,7 @@ const Header = () => {
                 isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED
               }
             />
-          </p> */}
+          </p>
           <div className="flex justify-center md:mb-20 mb-10 mt-5">
             <button
               className="bg-[#231c11] text-[#f2e2d3] font-bold md:w-[160px] md:h-[50px] md:text-lg text-xs w-[80px] h-[25px] rounded-md"
