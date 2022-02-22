@@ -48,9 +48,9 @@ const Header = () => {
               }
             />
           </p> */}
-          <div className="flex justify-center md:mb-20 mb-10">
+          <div className="flex justify-center md:mb-20 mb-10 mt-5">
             <button
-              className="bg-[#231c11] text-[#f2e2d3] font-bold w-[160px] h-[50px] rounded-md"
+              className="bg-[#231c11] text-[#f2e2d3] font-bold md:w-[160px] md:h-[50px] md:text-lg text-xs w-[80px] h-[25px] rounded-md"
               style={{ fontFamily: "Orbitron" }}
             >
               mint
