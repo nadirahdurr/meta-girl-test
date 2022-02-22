@@ -8,8 +8,27 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.5",
+    "@rollup/plugin-inject": "^4.0.4",
+    "@walletconnect/web3-provider": "^1.7.1",
+    "aos": "^2.3.4",
+    "authereum": "^0.1.14",
+    "ethers": "^5.5.4",
+    "event-emitter": "^0.3.5",
+    "framer-motion": "^6.2.7",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-image-follow": "^1.2.2",
+    "react-sound": "^1.2.0",
+    "rgt": "^1.0.7",
+    "sound": "^2.7.0",
+    "styled-components": "^5.3.3",
+    "util": "^0.10.3",
+    "walletlink": "^2.4.7",
+    "web3modal": "^1.9.5"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
