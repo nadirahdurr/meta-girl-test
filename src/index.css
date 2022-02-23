@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,10 +14,9 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-
-  margin:0;
-  padding:0;
-  overflow-x:hidden;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 code {
@@ -28,9 +29,6 @@ body {
   width: 100%;
   margin: 0;
 }
-
-
-
 
 h1 {
   color: #dce9fc;
@@ -178,8 +176,8 @@ a {
 }
 
 .footer-end {
-  background: url("./assets/images/sand-background.jpg") 100% 100% no-repeat
-    padding-box;
+  /* background: url("./assets/images/sand-background.jpg") 100% 100% no-repeat */
+  /* padding-box; */
   z-index: -1;
   background-size: 100%;
   background-position: 35% 44.4%;
@@ -211,10 +209,9 @@ div#mint-and-timer {
   /* height: 450px; */
 }
 
- 
-.web3modal-modal-lightbox { z-index: 11 !important; }
-
-
+.web3modal-modal-lightbox {
+  z-index: 11 !important;
+}
 
 #connect-wallet-button {
   background: #231c0d;
@@ -227,7 +224,6 @@ div#mint-and-timer {
   cursor: pointer;
   font-weight: bolder;
 }
-
 
 #mint-button {
   background: #231c11;
@@ -258,13 +254,12 @@ div#mint-and-timer {
   width: 30vw;
   height: 40vw;
   outline: 1px solid;
-  transform: translateX( calc(100 * var(--offset) ));
+  transform: translateX(calc(100 * var(--offset)));
 }
 
 .slides {
-display: grid;
+  display: grid;
 }
-
 
 @font-face {
   font-family: "StalinistOne-Regular";
@@ -398,13 +393,13 @@ display: grid;
 
 .who-are-we-color {
   /* background: linear-gradient(#5499a7, #54be9e); */
-  background: url("./assets/images/sand-background.jpg") 100% 100% no-repeat
+  /* background: url("./assets/images/sand-background.jpg") 100% 100% no-repeat
     padding-box;
   z-index: -1;
   background-size: 100%;
   background-position: 50% 13%;
   width: 100%;
-  padding-top: 5%;
+  padding-top: 5%; */
 }
 
 .who-are-we-split {
@@ -608,8 +603,8 @@ display: grid;
 }
 
 .our-team {
-  background: url("./assets/images/sand-background.jpg") 100% 100% no-repeat
-    padding-box;
+  /* background: url("./assets/images/sand-background.jpg") 100% 100% no-repeat
+    padding-box; */
   z-index: -1;
   background-size: 100%;
   background-position: 35% 26%;

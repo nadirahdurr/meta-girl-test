@@ -44,7 +44,6 @@ const Circle = styled.div`
   top: -4.2em;
   right: -10em;
   z-index: 5;
-  background-image: url("/assets/images/sand-background.jpg");
   border-radius: 50%;
 `;
 

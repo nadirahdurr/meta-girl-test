@@ -1,7 +1,6 @@
 import React from "react";
 
 const Story = () => {
-
   return (
     <div className="md:mb-20 mb-10">
       <div
@@ -10,7 +9,7 @@ const Story = () => {
       >
         THE STORY BEHIND THE DIGITAL HEARTS
       </div>
-      <p className="text-[#515340]" style={{ fontFamily: "Orbitron" }}>
+      <p className="text-[#515340]" style={{ fontFamily: "Libre Franklin" }}>
         The end of times are upon us and we the human race have found ourselves
         in a post apocalyptic world. As a result of this immeasurable tragedy,
         the aftermath has left a treasured collection of 3,501 eternally beating

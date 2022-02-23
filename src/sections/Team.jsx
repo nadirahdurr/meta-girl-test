@@ -7,8 +7,8 @@ import PinkEth from "../assets/images/pink-eth.png";
 import PurpleEth from "../assets/images/purple-eth.png";
 import SilverEth from "../assets/images/silver-eth.png";
 import { SiTwitter } from "react-icons/si";
-import MetaGold from "../assets/images/meta-gold.jpeg"
-import MetaGoldTwo from "../assets/images/meta-gold-2.jpeg"
+import MetaGold from "../assets/images/meta-gold.jpeg";
+import MetaGoldTwo from "../assets/images/meta-gold-2.jpeg";
 import { useEffect } from "react";
 
 import Aos from "aos";
@@ -61,9 +61,8 @@ const Team = () => {
   ];
 
   useEffect(() => {
-    Aos.init({duration: 1000});
-
-  },[])
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <div className="">
       <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
@@ -79,12 +78,11 @@ const Team = () => {
               className="rounded-md w-[300px] h-[200px]"
               src={MetaGold}
             />
-       <img
+            <img
               data-aos="fade-right"
               className="rounded-md w-[300px] h-[200px]"
               src={MetaGoldTwo}
             />
-
           </div>
           <div className="lg:col-span-2">
             <h2
@@ -108,12 +106,12 @@ const Team = () => {
                     <div className=" text-lg leading-6 space-y-1 ">
                       <h3
                         className="h3 text-[#515340]"
-                        style={{ fontFamily: "Orbitron" }}
+                        style={{ fontFamily: "Libre Franklin" }}
                       >
                         {person.name}
                       </h3>
                       <p
-                        style={{ fontFamily: "Orbitron" }}
+                        style={{ fontFamily: "Libre Franklin" }}
                         className="text-[#231c0d] font-bold"
                       >
                         {person.role}
