@@ -1,151 +1,19 @@
-import React, { useCallback, useEffect, useReducer } from "react";
+import React, { useContext } from "react";
 import logo from "../assets/images/logo.png";
-import { ethers } from "ethers";
-import Web3Modal from "web3modal";
-import WalletConnectProvider from "@walletconnect/web3-provider";
-import WalletLink from "walletlink";
-import Authereum from "authereum";
 import Alert from "../components/Alert";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { SiDiscord, SiTwitter } from "react-icons/si";
-
-const INFURA_ID = "72ed9f10d5c943cca084d16e06879ac0";
+import { TransactionContext } from "../context/TransactionContext";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const providerOptions = {
-  walletconnect: {
-    package: WalletConnectProvider,
-    options: {
-      infuraId: INFURA_ID,
-      chainId: 4,
-    },
-  },
-  authereum: {
-    package: Authereum,
-    chainId: 4,
-  },
-  walletlink: {
-    package: WalletLink,
-    options: {
-      infuraId: INFURA_ID,
-      chainId: 4,
-    },
-  },
-};
-
-let web3Modal;
-
-if (typeof window !== "undefined") {
-  web3Modal = new Web3Modal({
-    network: "rinkeby", // optional
-    cacheProvider: false,
-    disableInjectedProvider: false,
-    providerOptions, // required
-  });
-}
-
-const initialState = {
-  provider: null,
-  web3Provider: null,
-  address: null,
-  chainId: null,
-  renderAlert: false,
-};
-
-function init() {
-  return {
-    provider: null,
-    web3Provider: null,
-    address: null,
-    chainId: null,
-    renderAlert: false,
-  };
-}
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "SET_WEB3_PROVIDER":
-      return {
-        ...state,
-        provider: action.provider,
-        web3Provider: action.web3Provider,
-        address: action.address,
-        chainId: action.chainId,
-      };
-    case "SET_ADDRESS":
-      return {
-        ...state,
-        address: action.address,
-      };
-    case "SET_CHAIN_ID":
-      return {
-        ...state,
-        chainId: action.chainId,
-      };
-    case "RENDER_ALERT":
-      return {
-        ...state,
-        renderAlert: action.renderAlert,
-      };
-    case "RESET_WEB3_PROVIDER":
-      return init();
-    default:
-      throw new Error();
-  }
-}
-
 const Nav = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const { provider, web3Provider, address, chainId, renderAlert } = state;
+  const transactionContext = useContext(TransactionContext);
 
-  const connectWallet = useCallback(async () => {
-    const provider = await web3Modal.connect();
-    const web3Provider = new ethers.providers.Web3Provider(provider);
-
-    const signer = web3Provider.getSigner();
-    const address = await signer.getAddress();
-
-    const network = await web3Provider.getNetwork();
-
-    dispatch({
-      type: "SET_WEB3_PROVIDER",
-      provider,
-      web3Provider,
-      address,
-      chainId: network.chainId,
-    });
-
-    dispatch({
-      type: "RENDER_ALERT",
-      renderAlert: network.chainId !== 4 ? true : false,
-    });
-
-    console.log("web3Provider", web3Provider);
-    console.log("Connected", address);
-    console.log("network", network);
-  }, []);
-
-  const disconnectWallet = useCallback(
-    async function () {
-      if (address == undefined) {
-        connectWallet();
-      } else {
-        await web3Modal.clearCachedProvider();
-        if (provider?.disconnect && typeof provider.disconnect === "function") {
-          await provider.disconnect();
-        }
-        dispatch({
-          type: "RESET_WEB3_PROVIDER",
-        });
-      }
-    },
-    [state.provider]
-  );
-
+  const { connectWallet, disconnectWallet, address, renderAlert } = transactionContext
   const renderConnectionButton = (str) =>
     str === null || str == undefined || str === "" ? (
       <button
@@ -168,47 +36,6 @@ const Nav = () => {
             }`}
       </button>
     );
-
-  useEffect(() => {
-    if (web3Modal.cachedProvider) {
-      connectWallet();
-    }
-  }, [connectWallet]);
-
-  useEffect(() => {
-    if (provider?.on) {
-      const handleAccountsChanged = (accounts) => {
-        // eslint-disable-next-line no-console
-        console.log("accountsChanged", accounts);
-        dispatch({
-          type: "SET_ADDRESS",
-          address: accounts[0],
-        });
-      };
-
-      const handleChainChanged = (_hexChainId) => {
-        window.location.reload();
-      };
-
-      const handleDisconnect = (error) => {
-        // eslint-disable-next-line no-console
-        console.log("disconnect", error);
-        disconnectWallet();
-      };
-
-      provider.on("accountsChanged", handleAccountsChanged);
-      provider.on("chainChanged", handleChainChanged);
-      provider.on("disconnect", handleDisconnect);
-
-      return () => {
-        if (provider.removeListener) {
-          provider.removeListener("accountsChanged", handleAccountsChanged);
-          provider.removeListener("chainChanged", handleChainChanged);
-          provider.removeListener("disconnect", handleDisconnect);
-        }
-      };
-    }
-  }, [provider, disconnectWallet]);
 
   return (
     <Disclosure

@@ -44,7 +44,7 @@ const FAQ = () => {
       >
         <div className="max-w-3xl mx-auto divide-y-2 divide-[#231c0d]">
           <h2
-            className="text-center text-[20px] md:text-[65px] font-bold text-[#231c0d] sm:tracking-tight"
+            className="text-center text-[20px] md:text-[50px] font-bold text-[#231c0d] sm:tracking-tight"
             style={{ fontFamily: "Orbitron" }}
           >
             FAQ

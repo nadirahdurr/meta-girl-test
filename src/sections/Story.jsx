@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import Sound from "react-sound";
+import MetaGirlAudio from "../assets/metagirl-audio/Sammy - Metagirl INSTRUMENTAL.mp3";
+import { FaPlay, FaStop } from "react-icons/fa";
 
 const Story = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
-    <div className="md:mb-20 mb-10">
+    <div className="">
       <div
-        className="mt-1 mb-1 text-[20px] md:text-[45px] font-bold text-[#231c0d] sm:tracking-tight"
+        className="mt-2 mb-4 text-[14px] md:text-[45px] font-bold text-[#231c0d] sm:tracking-tight"
         style={{ fontFamily: "Orbitron" }}
       >
+        {/* <button
+          className=" text-[20px] md:text-[45px] font-bold text-[#231c0d] sm:tracking-tight"
+          onClick={() => setIsPlaying(!isPlaying)}
+        >
+          {!isPlaying ? (
+            <FaPlay className="md:text-4xl text-lg text-[#231c0d] hover:text-[#515340]" />
+          ) : (
+            <FaStop className="md:text-4xl text-lg text-[#231c0d] hover:text-[#515340] animate-pulse" />
+          )}
+        </button>
+        <Sound
+          url={MetaGirlAudio}
+          loop={true}
+          playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
+        />{" "} */}
         THE STORY BEHIND THE DIGITAL HEARTS
       </div>
       <p className="text-[#515340]" style={{ fontFamily: "Libre Franklin" }}>

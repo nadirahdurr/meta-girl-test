@@ -1,4 +1,3 @@
-import Footer from "./sections/Footer";
 import Header from "./sections/Header";
 import Nav from "./sections/Nav";
 import Roadmap from "./sections/Roadmap";
@@ -30,7 +29,7 @@ function App() {
         <Roadmap />
         <FAQ />
         <Team />
-        <Footer />
+        {/* <Footer /> */}
         {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
