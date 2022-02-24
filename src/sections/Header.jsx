@@ -15,7 +15,7 @@ import { TransactionContext } from "../context/TransactionContext";
 const Header = () => {
   const transactionContext = useContext(TransactionContext);
 
-    const {
+  const {
     state,
     handleInputChange,
     handleIncrementClick,
@@ -24,7 +24,6 @@ const Header = () => {
     renderAlert,
   } = transactionContext;
   const [isPlaying, setIsPlaying] = useState(false);
-
 
   const mintMetaHeart = (e) => {
     // if (state.amount => 5) {
@@ -74,6 +73,15 @@ const Header = () => {
               }
             />
           </p>
+          <div
+            className="flex justify-center md:mb-5 mb-2 font-bold text-[10px] md:text-[15px] text-[#231c11]"
+            style={{ fontFamily: "Libre Franklin" }}
+          >
+            {" "}
+            {state.preSaleList === "0x00" && state.preSaleActive
+              ? "Sorry your wallet is not on the presale list."
+              : ""}
+          </div>
           <div className="flex justify-center mt-5">
             <div className="pr-2">
               <button
@@ -112,14 +120,12 @@ const Header = () => {
             </button>
           </div>
           <div
-            className="flex justify-center md:mb-14 mb-6 font-bold text-[#231c11]"
+            className="flex justify-center md:mb-14 mb-6 font-bold text-[#231c11] text-[10px] md:text-[15px]"
             style={{ fontFamily: "Libre Franklin" }}
           >
-            {(state !== null || state != undefined) && (state.amount > 5 || state.amount < 0)
+            {(state !== null || state != undefined) &&
+            (state.amount > 5 || state.amount < 0)
               ? "*Mint max is 5 per wallet"
-              : ""}
-            {state.preSaleList === '0x00' && state.preSaleActive
-              ? "Sorry your wallet is not on the presale list."
               : ""}
           </div>
           <Story />

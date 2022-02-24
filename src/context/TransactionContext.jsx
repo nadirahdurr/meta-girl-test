@@ -5,15 +5,14 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import WalletLink from "walletlink";
 import Authereum from "authereum";
 
-import { contractABI, contractAddress, INFURA_ID } from "../utils/constants";
+import { contractABI, contractAddress, VITE_INFURA_ID } from "../utils/constants";
 
 export const TransactionContext = React.createContext();
-console.log(import.meta.env.VITE_INFURA_ID)
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
-      infuraId: INFURA_ID,
+      infuraId: VITE_INFURA_ID,
       chainId: 4,
     },
   },
@@ -24,7 +23,7 @@ const providerOptions = {
   walletlink: {
     package: WalletLink,
     options: {
-      infuraId: INFURA_ID,
+      infuraId: VITE_INFURA_ID,
       chainId: 4,
     },
   },
@@ -39,11 +38,11 @@ if (typeof window !== "undefined") {
     disableInjectedProvider: false,
     providerOptions, // required
     theme: {
-      background: "rgb(39, 49, 56)",
-      main: "rgb(199, 199, 199)",
-      secondary: "rgb(136, 136, 136)",
-      border: "rgba(195, 195, 195, 0.14)",
-      hover: "rgb(16, 26, 32)",
+      background: "rgba(118,231,226,255)",
+      main: "rgba(25,28,18,255)",
+      secondary: "rgba(25,28,18,255)",
+      border: "rgba(25,28,18,255)",
+      hover: "rgba(118,231,226,255)",
     },
   });
 }
