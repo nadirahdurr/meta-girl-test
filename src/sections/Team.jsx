@@ -26,7 +26,7 @@ const Team = () => {
       name: "Smokey",
       role: "Project Manager",
       imageUrl: BlueEth,
-      twiter: "https://twitter.com/BakedFoodieETH",
+      twitter: "https://twitter.com/BakedFoodieETH",
     },
     {
       name: "Kash",
@@ -111,7 +111,7 @@ const Team = () => {
                       >
                         {person.role}
                       </p>
-                      <a href={person.twiter} target="_blank">
+                      <a href={person.twitter} target="_blank"> {console.log(person.twitter)}
                         <SiTwitter
                           className="cursor-pointer text-[#231c0d] space-y-1 ml-[20px] text-2xl "
                           alt={`${person}'s-twitter`}
