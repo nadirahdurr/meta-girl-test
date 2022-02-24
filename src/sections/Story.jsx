@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Sound from "react-sound";
-import MetaGirlAudio from "../assets/metagirl-audio/Sammy - Metagirl INSTRUMENTAL.mp3";
+import StoryAudio from "../assets/metagirl-audio/SAMMYDROPTRAILER.mp3";
 import { FaPlay, FaStop } from "react-icons/fa";
 
 const Story = () => {
@@ -12,21 +12,21 @@ const Story = () => {
         className="mt-2 mb-4 text-[14px] md:text-[45px] font-bold text-[#231c0d] sm:tracking-tight"
         style={{ fontFamily: "Orbitron" }}
       >
-        {/* <button
+        <button
           className=" text-[20px] md:text-[45px] font-bold text-[#231c0d] sm:tracking-tight"
           onClick={() => setIsPlaying(!isPlaying)}
         >
           {!isPlaying ? (
-            <FaPlay className="md:text-4xl text-lg text-[#231c0d] hover:text-[#515340]" />
+            <FaPlay className="md:text-4xl text-sm text-[#231c0d] hover:text-[#515340]" />
           ) : (
-            <FaStop className="md:text-4xl text-lg text-[#231c0d] hover:text-[#515340] animate-pulse" />
+            <FaStop className="md:text-4xl text-sm text-[#231c0d] hover:text-[#515340] animate-pulse" />
           )}
         </button>
         <Sound
-          url={MetaGirlAudio}
-          loop={true}
+          url={StoryAudio}
+          loop={false}
           playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
-        />{" "} */}
+        />{" "}
         THE STORY BEHIND THE DIGITAL HEARTS
       </div>
       <p className="text-[#515340]" style={{ fontFamily: "Libre Franklin" }}>
@@ -40,7 +40,7 @@ const Story = () => {
         scattered across the deserted earth awaiting discovery by those destined
         to wield them. Who will be the chosen ones?
       </p>
-      {/* <p className="text-[#515340] md:text-[15px] font-bold text-[9px] md:mb-10 mt-5" style={{ fontFamily: "Orbitron" }}>Voiced by Robert Ricotta</p> */}
+      <p className="text-[#515340] md:text-[15px] font-bold text-[10px] mt-2" style={{ fontFamily: "Orbitron" }}>Voiced by Robert Ricotta</p>
     </div>
   );
 };

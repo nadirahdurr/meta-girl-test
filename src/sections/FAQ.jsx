@@ -3,10 +3,15 @@ import { ChevronDownIcon } from "@heroicons/react/outline";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import MetaInfinity from "../assets/images/infinity-meta.png";
+import FAQNFTExplainer from "../components/FAQNFTExplainer";
+import InfinityGaunlet from "../assets/metagirl-audio/INFINITYGAUNTLETEXPLAINED.mp3";
+import { FaPlay, FaStop } from "react-icons/fa";
+import FAQINFINITY from "../components/FAQINFINITY"
 
 const faqs = [
   {
     question: "WHAT IS AN NFT?",
+    // music: NFTExplainer,
     answer:
       "An NFT stands for “Non Fungible Token” or a “Digital Certificate of Authenticity of a virtual asset” Since they’re non-fungible (irreplaceable) it cannot be traded. It holds scarcity and limitation. Every digital asset is stored on what is called the BLOCKCHAIN, a public ledger where every transaction is public and fully transparent. Each NFT has their own string of numbers & letters, creating their own UNIQUE one of a kind code. With individual smart contracts tied to each of them, they are impossible to copy. Think of it like trying to print out a video and share it…It just can’t be done.",
   },
@@ -18,10 +23,11 @@ const faqs = [
   {
     question: "WHEN IS MINT DATE + SUPPLY?",
     answer:
-      "The mint date will be February 25th, 12AM EST. Pre-sale will last all weekend long. Public mint will be on Monday the 28th, also at 12AM EST. Total supply: 3,501. 700 of each ETH color and only one single 1:1. The winner of the 1:1 will receive a custom METAGIRL acoustic guitar (black) including a personalized message and signature from SAMMY.",
+      "Presale starts at midnight / 12am EST! If you’re on the whitelist, you are able to mint for .05 ETH - beginning at 12am EST tonight. Public sale will commence when presale is sold out OR on Sunday at 12am EST. Direct questions to general chat or Twitter. We will NOT send you any links or DMs.",
   },
   {
     question: "INFINITY GAUNTLET EXPLAINED?",
+    // music: InfinityGaunlet,
     answer:
       "If you notice there is a unique ETH jewel on the Digital Heart. The collection of 3,501 will be divided into 5 various colors, 700 of each ETH jewel color represented. (blue, red, green, yellow, purple), just like the infamous infinity gauntlet wielded by the almighty Thanos. Once one attains all 5 ETH jewels and completes their infinity gauntlet of Digital Hearts, they will then be rewarded with the BEATBOX; an exclusive package containing all kinds of goodies. These loyal members will also be granted access to the “The Gauntlet” discord chat where those who wield the maximum ethereal power can connect with each other. The lucky winner of the only 1:1 Golden Heart will receive a gifted, custom-made METAGIRL acoustic guitar (black) with the 2D render on the front of it, including a personalized message and signature from Sammy himself.",
     image: MetaInfinity,
@@ -56,6 +62,11 @@ const FAQ = () => {
                   <>
                     <dt className="text-lg">
                       <Disclosure.Button className="text-left w-full flex justify-between items-start text-[#231c0d]">
+                      {faq.question === "WHAT IS AN NFT?" ? (
+                          <FAQNFTExplainer />
+                        ) : faq.question === "INFINITY GAUNTLET EXPLAINED?" ?(
+                          <FAQINFINITY /> 
+                        ) : (<div/>)}
                         <span className="font-bold text-[#231c0d]">
                           {faq.question}
                         </span>
