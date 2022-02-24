@@ -153,7 +153,7 @@ export const TransactionProvider = ({ children }) => {
   };
 
   const handleDecrementClick = () => {
-    if (state.amount > 0) {
+    if (state.amount > 0 && state.amount !== 1) {
       dispatch({
         type: "SET_AMOUNT",
         amount: amount - 1,
@@ -255,7 +255,7 @@ export const TransactionProvider = ({ children }) => {
           );
 
           console.log(
-            `Mined, see transaction: https://rinkeby.etherscan.io/tx/${publicSaleTxn.hash}`
+            `Minted, see transaction: https://rinkeby.etherscan.io/tx/${publicSaleTxn.hash}`
           );
         }
         dispatch({

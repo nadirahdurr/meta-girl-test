@@ -93,7 +93,7 @@ const Header = () => {
             </div>
             <input
               className="rounded-lg w-12 h-10 pl-5"
-              min="0"
+              min="1"
               max="5"
               name="amount"
               type="number"
@@ -118,6 +118,15 @@ const Header = () => {
             >
               MINT
             </button>
+          </div>
+          <div
+            className="flex justify-center md:mb-14 mb-6 font-bold text-[#231c11] text-[10px] md:text-[15px]"
+            style={{ fontFamily: "Libre Franklin" }}
+          >
+            {(state !== null || state != undefined) &&
+            (state.amount > 5 || state.amount < 0)
+              ? "*Mint max is 5 per wallet"
+              : ""}
           </div>
           <div
             className="flex justify-center md:mb-14 mb-6 font-bold text-[#231c11] text-[10px] md:text-[15px]"
