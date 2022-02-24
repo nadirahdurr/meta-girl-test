@@ -104,7 +104,7 @@ const Header = () => {
           <div className="flex justify-center md:mb-4 mb-2 mt-5">
             <button
               onClick={mintMetaHeart}
-              className="bg-[#231c11] text-[#f2e2d3] font-bold w-[180px] h-[50px] md:w-[200px] md:h-[65px] md:text-lg text-xs w-[80px] h-[25px] rounded-md"
+              className="bg-[#231c11] text-[#f2e2d3] font-bold w-[180px] h-[50px] md:w-[200px] md:h-[65px] md:text-lg text-xs rounded-md"
               style={{ fontFamily: "Orbitron" }}
               disabled={state.amount > 5 || state.amount < 0 || renderAlert}
             >
