@@ -63,10 +63,10 @@ const FAQ = () => {
                     <dt className="text-lg">
                       <Disclosure.Button className="text-left w-full flex justify-between items-start text-[#231c0d]">
                       {faq.question === "WHAT IS AN NFT?" ? (
-                          <FAQNFTExplainer />
+                          <div className="md:mr-[30px] mr-6"><FAQNFTExplainer /></div>
                         ) : faq.question === "INFINITY GAUNTLET EXPLAINED?" ?(
-                          <FAQINFINITY /> 
-                        ) : (<div/>)}
+                          <div className="md:mr-[42px] mr-7"><FAQINFINITY /> </div>
+                        ) : (<div className="md:mr-[65px] mr-10"/>)}
                         <span className="font-bold text-[#231c0d]">
                           {faq.question}
                         </span>
