@@ -7,6 +7,7 @@ import { SiDiscord, SiTwitter } from "react-icons/si";
 import { TransactionContext } from "../context/TransactionContext";
 import ErrorAlert from "../components/ErrorAlert";
 import SuccessfulAlert from "../components/SuccessfulAlert";
+import OpenseaIcon from "../assets/images/tranparent-opensea.png";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -101,6 +102,9 @@ const Nav = () => {
                       alt="METAGIRL Twitter"
                     />
                   </a>
+                  <a href="https://opensea.io/collection/metagirldh" target="_blank">
+                  <input className="h-6 w-6 mt-1" type="image" src={OpenseaIcon} />
+                </a>
                 </div>
               </div>
               <div className="-mr-2 flex sm:hidden">
@@ -144,6 +148,9 @@ const Nav = () => {
                     className="cursor-pointer ml-2 text-[#231c0d] text-2xl"
                     alt="METAGIRL Twitter"
                   />
+                </a>
+                <a href="https://opensea.io/collection/metagirldh" target="_blank">
+                  <input className="h-6 w-6 ml-2" type="image" src={OpenseaIcon} />
                 </a>
               </div>
             </div>
