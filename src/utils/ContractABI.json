@@ -205,21 +205,6 @@
    {
       "inputs":[
          {
-            "internalType":"address[]",
-            "name":"addresses",
-            "type":"address[]"
-         }
-      ],
-      "name":"fillPresalelist",
-      "outputs":[
-         
-      ],
-      "stateMutability":"nonpayable",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
             "internalType":"uint256",
             "name":"tokenId",
             "type":"uint256"
@@ -387,6 +372,21 @@
    },
    {
       "inputs":[
+         
+      ],
+      "name":"preSaleLimit",
+      "outputs":[
+         {
+            "internalType":"uint256",
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
          {
             "internalType":"uint256",
             "name":"quantity",
@@ -405,25 +405,6 @@
          
       ],
       "name":"preSaleMintPrice",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
-            "internalType":"address",
-            "name":"",
-            "type":"address"
-         }
-      ],
-      "name":"presalelist",
       "outputs":[
          {
             "internalType":"uint256",

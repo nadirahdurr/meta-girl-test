@@ -1,5 +1,5 @@
 import abi from "./ContractABI.json";
 
 export const contractABI = abi;
-export const contractAddress = "0x0B5f09Da345CA7F9389336210320635e19Cb8315";
+export const contractAddress = "0x93A42f8EebeECDDa3cbdc593f3130bCA5Ffd8467";
 export const VITE_INFURA_ID = import.meta.env.VITE_INFURA_ID
