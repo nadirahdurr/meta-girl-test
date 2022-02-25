@@ -21,7 +21,7 @@ const SuccessfulAlert = () => {
             style={{ fontFamily: "Libre Franklin" }}
             className=" px-3  font-medium text-green-700 hover:green-red-600"
           >
-            Minted.. Click to view transaction
+            Click to view transaction
           </a>
         </div>
       </div>
