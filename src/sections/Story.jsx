@@ -40,7 +40,7 @@ const Story = () => {
         scattered across the deserted earth awaiting discovery by those destined
         to wield them. Who will be the chosen ones?
       </p>
-      <p className="text-[#515340] md:text-[15px] font-bold text-[10px] mt-2" style={{ fontFamily: "Orbitron" }}>Voiced by Robert Ricotta</p>
+      <p style={{ fontFamily: "Libre Franklin" }}className="text-[#515340] uppercase font-bold text-[10px] md:text-[12px] mt-2" >Voiced by Robert Ricotta</p>
     </div>
   );
 };

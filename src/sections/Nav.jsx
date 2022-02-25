@@ -5,6 +5,8 @@ import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { SiDiscord, SiTwitter } from "react-icons/si";
 import { TransactionContext } from "../context/TransactionContext";
+import ErrorAlert from "../components/ErrorAlert";
+import SuccessfulAlert from "../components/SuccessfulAlert";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -13,7 +15,14 @@ function classNames(...classes) {
 const Nav = () => {
   const transactionContext = useContext(TransactionContext);
 
-  const { connectWallet, disconnectWallet, address, renderAlert } = transactionContext
+  const {
+    connectWallet,
+    disconnectWallet,
+    address,
+    renderAlert,
+    mintComplete,
+    insufficientFunds,
+  } = transactionContext;
   const renderConnectionButton = (str) =>
     str === null || str == undefined || str === "" ? (
       <button
@@ -107,7 +116,6 @@ const Nav = () => {
               </div>
             </div>
           </div>
-
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
@@ -141,6 +149,8 @@ const Nav = () => {
             </div>
           </Disclosure.Panel>
           {renderAlert ? <Alert /> : ""}
+          {insufficientFunds ? <ErrorAlert /> : ""}
+          {mintComplete ? <SuccessfulAlert /> : ""}{" "}
         </>
       )}
     </Disclosure>

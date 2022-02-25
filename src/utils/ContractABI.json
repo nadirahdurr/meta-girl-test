@@ -208,11 +208,6 @@
             "internalType":"address[]",
             "name":"addresses",
             "type":"address[]"
-         },
-         {
-            "internalType":"uint256[]",
-            "name":"numSlots",
-            "type":"uint256[]"
          }
       ],
       "name":"fillPresalelist",

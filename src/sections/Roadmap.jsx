@@ -10,7 +10,7 @@ const Roadmap = () => {
   return (
     <div className="">
       <div
-        className="md:mb-4 mb-16 text-[20px] md:text-[50px] font-bold text-[#231c0d] sm:tracking-tight"
+        className="md:mb-2 text-[20px] md:text-[50px] font-bold text-[#231c0d] sm:tracking-tight"
         style={{ fontFamily: "Orbitron" }}
       >
         <center>PULSE 1.0</center>
@@ -18,14 +18,11 @@ const Roadmap = () => {
       <center>
         <img
           data-aos="fade-up"
-          className="flew justify-center lg:m-[-20rem] md:m-[-15rem] m-[-11rem] md:max-w-5xl mb-[1px]"
+          className="flew justify-center lg:m-[-20rem] md:m-[-18rem] m-[-7rem] md:max-w-5xl mb-[1px]"
           src={roadmap}
         />
       </center>
-      {/* <img class="roadmap-text" src={roadmap} /> */}
-      {/* <img class="roadmap-background" src="/assets/images/gradient-white-background.png" /> */}
-      {/* <img class="content-box" src="/assets/images/content-box-img.png" /> */}
-    </div>
+          </div>
   );
 };
 

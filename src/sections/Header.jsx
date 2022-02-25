@@ -16,12 +16,11 @@ const Header = () => {
   const transactionContext = useContext(TransactionContext);
 
   const {
-    state,
+    amount,
     handleInputChange,
     handleIncrementClick,
     handleDecrementClick,
     sendTransaction,
-    renderAlert,
   } = transactionContext;
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -56,7 +55,6 @@ const Header = () => {
             {" "}
             The Digital Heart Collection and Music NFT By Sammy Arriaga
           </div>
-
           <p className="max-w-xl my-5	md:mb-10 mx-auto text-xl text-[##f2e2d3]">
             <button onClick={() => setIsPlaying(!isPlaying)}>
               {!isPlaying ? (
@@ -73,15 +71,6 @@ const Header = () => {
               }
             />
           </p>
-          <div
-            className="flex justify-center md:mb-5 mb-2 font-bold text-[10px] md:text-[15px] text-[#231c11]"
-            style={{ fontFamily: "Libre Franklin" }}
-          >
-            {" "}
-            {state.preSaleList === "0x00" && state.preSaleActive
-              ? "Sorry your wallet is not on the presale list."
-              : ""}
-          </div>
           <div className="flex justify-center mt-5">
             <div className="pr-2">
               <button
@@ -97,7 +86,7 @@ const Header = () => {
               max="5"
               name="amount"
               type="number"
-              value={state.amount}
+              value={amount}
               onChange={handleInputChange}
             />
             <div className="pl-2">
@@ -114,31 +103,19 @@ const Header = () => {
               onClick={mintMetaHeart}
               className="bg-[#231c11] text-[#f2e2d3] font-bold w-[180px] h-[50px] md:w-[200px] md:h-[65px] md:text-lg text-xs rounded-md"
               style={{ fontFamily: "Orbitron" }}
-              disabled={state.amount > 5 || state.amount < 0 || renderAlert}
             >
               MINT
             </button>
           </div>
+
           <div
-            className="flex justify-center md:mb-14 mb-6 font-bold text-[#231c11] text-[10px] md:text-[15px]"
+            className="flex justify-center md:mb-14 mb-6 font-bold text-[#515340] uppercase text-[10px] md:text-[12px]"
             style={{ fontFamily: "Libre Franklin" }}
           >
-            {(state !== null || state != undefined) &&
-            (state.amount > 5 || state.amount < 0)
-              ? "*Mint max is 5 per wallet"
-              : ""}
-          </div>
-          <div
-            className="flex justify-center md:mb-14 mb-6 font-bold text-[#231c11] text-[10px] md:text-[15px]"
-            style={{ fontFamily: "Libre Franklin" }}
-          >
-            {(state !== null || state != undefined) &&
-            (state.amount > 5 || state.amount < 0)
-              ? "*Mint max is 5 per wallet"
-              : ""}
+            {" "}
+            Mint max is 5 per wallet
           </div>
           <Story />
-
           {/* <div
             data-aos="flip-up"
             className="md:flex justify-center hidden  md:visible"
@@ -147,7 +124,6 @@ const Header = () => {
             <MetaCardTwo />
             <MetaCardThree />
           </div> */}
-
           {/* <div data-aos="flip-up" className="visible  md:hidden">
             <MetaCard />
           </div> */}

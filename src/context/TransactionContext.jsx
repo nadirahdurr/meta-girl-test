@@ -5,7 +5,11 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import WalletLink from "walletlink";
 import Authereum from "authereum";
 
-import { contractABI, contractAddress, VITE_INFURA_ID } from "../utils/constants";
+import {
+  contractABI,
+  contractAddress,
+  VITE_INFURA_ID,
+} from "../utils/constants";
 
 export const TransactionContext = React.createContext();
 const providerOptions = {
@@ -57,6 +61,10 @@ const initialState = {
   connected: false,
   preSaleList: null,
   preSaleActive: false,
+  txn: null,
+  mintComplete: false,
+  insufficientFunds: false,
+  maxMinted: false,
 };
 
 function init() {
@@ -70,6 +78,10 @@ function init() {
     connected: false,
     preSaleList: null,
     preSaleActive: false,
+    txn: null,
+    mintComplete: false,
+    insufficientFunds: false,
+    maxMinted: false,
   };
 }
 
@@ -114,6 +126,26 @@ function reducer(state, action) {
         ...state,
         preSaleActive: action.preSaleActive,
       };
+    case "SET_TRANSACTION_LINK":
+      return {
+        ...state,
+        txn: action.txn,
+      };
+    case "IS_MINT_COMPLETE":
+      return {
+        ...state,
+        mintComplete: action.mintComplete,
+      };
+    case "IS_INSUFFICIENT_FUNDS":
+      return {
+        ...state,
+        insufficientFunds: action.insufficientFunds,
+      };
+    case "IS_MAX_AMOUNT_MINTED":
+      return {
+        ...state,
+        maxMinted: action.maxMinted,
+      };
     case "RESET_WEB3_PROVIDER":
       return init();
     default:
@@ -131,7 +163,9 @@ export const TransactionProvider = ({ children }) => {
     amount,
     connected,
     preSaleList,
-    preSaleActive,
+    insufficientFunds,
+    txn,
+    mintComplete
   } = state;
 
   const handleInputChange = (e) => {
@@ -205,11 +239,11 @@ export const TransactionProvider = ({ children }) => {
         renderAlert: network.chainId !== 4 ? true : false,
       });
 
-      console.log("provider", provider);
-      console.log("web3Provider", web3Provider);
-      console.log("Connected", address);
-      console.log("network", network);
-      console.log("addresses", address);
+      // console.log("provider", provider);
+      // console.log("web3Provider", web3Provider);
+      // console.log("Connected", address);
+      // console.log("network", network);
+      // console.log("addresses", address);
     } catch (error) {
       console.log(error);
 
@@ -230,24 +264,32 @@ export const TransactionProvider = ({ children }) => {
     );
     try {
       if (connected) {
-        const preSaleList = await transactionContract.presalelist(
-          web3Provider.provider.selectedAddress
-        );
         const preSaleActive = await transactionContract.preSaleActive();
         const publicSaleActive = await transactionContract.publicSaleActive();
+
         const preSaleTransactionValue = (amount * 0.05).toFixed(2).toString();
         const publicSaleTransactionValue = (amount * 0.07)
           .toFixed(2)
           .toString();
 
-        if (preSaleList._hex.toString() === '0' && preSaleActive) {
+        if (preSaleActive) {
           let preSaleTxn = await transactionContract.preSaleMint(state.amount, {
             value: ethers.utils.parseEther(preSaleTransactionValue)._hex,
           });
 
           console.log(
-            `Mined, see transaction: https://rinkeby.etherscan.io/tx/${preSaleTxn.hash}`
+            `Minted, see transaction: https://rinkeby.etherscan.io/tx/${preSaleTxn.hash}`
           );
+
+          dispatch({
+            type: "SET_TRANSACTION_LINK",
+            txn: preSaleTxn.hash,
+          });
+
+          dispatch({
+            type: "IS_MINT_COMPLETE",
+            mintComplete: true,
+          });
         } else if (publicSaleActive) {
           let publicSaleTxn = await transactionContract.publicSaleMint(
             state.amount,
@@ -257,19 +299,32 @@ export const TransactionProvider = ({ children }) => {
           console.log(
             `Minted, see transaction: https://rinkeby.etherscan.io/tx/${publicSaleTxn.hash}`
           );
-        }
-        dispatch({
-          type: "SET_PRESALE_LIST",
-          preSaleList: preSaleList._hex,
-        });
 
-        dispatch({ 
-          type: "IS_PRESALE_ACTIVE", 
-          preSaleActive: preSaleActive 
-        });
+          dispatch({
+            type: "SET_TRANSACTION_LINK",
+            txn: publicSaleTxn.hash,
+          });
+
+          dispatch({
+            type: "IS_MINT_COMPLETE",
+            mintComplete: true,
+          });
+        }
       }
     } catch (error) {
-      console.log(error);
+      if (error.code === "INSUFFICIENT_FUNDS") {
+        dispatch({
+          type: "IS_INSUFFICIENT_FUNDS",
+          insufficientFunds: true,
+        });
+        // if (error.code === "UNPREDICTABLE_GAS_LIMIT") {
+        //   dispatch({
+        //     type: "IS_MAX_AMOUNT_MINTED",
+        //     maxMinted: true,
+        //   });
+        // }
+      }
+      console.log(error.code);
       throw new Error(error);
     }
   };
@@ -345,6 +400,9 @@ export const TransactionProvider = ({ children }) => {
         renderAlert,
         state,
         amount,
+        txn,
+        insufficientFunds,
+        mintComplete,
         handleInputChange,
         handleIncrementClick,
         handleDecrementClick,
