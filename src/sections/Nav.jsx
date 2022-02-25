@@ -36,7 +36,7 @@ const Nav = () => {
       <button
         style={{ fontFamily: "Orbitron" }}
         onClick={disconnectWallet}
-        className="bg-[#231c11] text-lg text-[#f2e2d3] font-bold w-[160px] h-[60px] rounded-md"
+        className="bg-[#231c11] text-lg text-[#f2e2d3] font-bold w-[190px] h-[60px] rounded-md"
       >
         {str == undefined
           ? "connect wallet"
