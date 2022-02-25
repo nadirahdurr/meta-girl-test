@@ -236,7 +236,7 @@ export const TransactionProvider = ({ children }) => {
 
       dispatch({
         type: "RENDER_ALERT",
-        renderAlert: network.chainId !== 4 ? true : false,
+        renderAlert: network.chainId !== 1 ? true : false,
       });
 
       // console.log("provider", provider);
