@@ -17,18 +17,18 @@ const providerOptions = {
     package: WalletConnectProvider,
     options: {
       infuraId: VITE_INFURA_ID,
-      chainId: 4,
+      chainId: 1,
     },
   },
   authereum: {
     package: Authereum,
-    chainId: 4,
+    chainId: 1,
   },
   walletlink: {
     package: WalletLink,
     options: {
       infuraId: VITE_INFURA_ID,
-      chainId: 4,
+      chainId: 1,
     },
   },
 };
@@ -37,7 +37,7 @@ let web3Modal;
 
 if (typeof window !== "undefined") {
   web3Modal = new Web3Modal({
-    network: "rinkeby", // optional
+    network: "mainnet", // optional
     cacheProvider: false,
     disableInjectedProvider: false,
     providerOptions, // required
@@ -278,7 +278,7 @@ export const TransactionProvider = ({ children }) => {
           });
 
           console.log(
-            `Minted, see transaction: https://rinkeby.etherscan.io/tx/${preSaleTxn.hash}`
+            `Minted, see transaction: https://etherscan.io/tx/${preSaleTxn.hash}`
           );
 
           dispatch({
@@ -297,7 +297,7 @@ export const TransactionProvider = ({ children }) => {
           );
 
           console.log(
-            `Minted, see transaction: https://rinkeby.etherscan.io/tx/${publicSaleTxn.hash}`
+            `Minted, see transaction: https://etherscan.io/tx/${publicSaleTxn.hash}`
           );
 
           dispatch({

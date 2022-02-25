@@ -15,7 +15,7 @@ const SuccessfulAlert = () => {
         <div className="flex-shrink-0 font-medium text-red-700 hover:text-red-600 "></div>
         <div className="ml-3">
           <a
-            href={`https://rinkeby.etherscan.io/tx/${txn}`}
+            href={`https://etherscan.io/tx/${txn}`}
             target="_blank"
             type="button"
             style={{ fontFamily: "Libre Franklin" }}
