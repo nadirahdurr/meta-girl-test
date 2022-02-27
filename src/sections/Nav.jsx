@@ -8,6 +8,7 @@ import { TransactionContext } from "../context/TransactionContext";
 import ErrorAlert from "../components/ErrorAlert";
 import SuccessfulAlert from "../components/SuccessfulAlert";
 import OpenseaIcon from "../assets/images/tranparent-opensea.png";
+import Banner from "../components/Banner";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -54,7 +55,7 @@ const Nav = () => {
     >
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between md:h-[6rem] h-[4rem]">
               <div className="flex items-center">
                 <div className="">
@@ -153,8 +154,10 @@ const Nav = () => {
                   <input className="h-6 w-6 ml-2" type="image" src={OpenseaIcon} />
                 </a>
               </div>
+              
             </div>
           </Disclosure.Panel>
+          <Banner/>
           {renderAlert ? <Alert /> : ""}
           {insufficientFunds ? <ErrorAlert /> : ""}
           {mintComplete ? <SuccessfulAlert /> : ""}{" "}

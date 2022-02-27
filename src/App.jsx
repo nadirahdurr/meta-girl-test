@@ -6,20 +6,20 @@ import FAQ from "./sections/FAQ";
 import Pterodactyl from "./assets/images/Pterodactyl.png";
 import FlippedPterodactyl from "./assets/images/flipped-pterodactyl.png";
 import Imagefollow from "react-image-follow";
-
+import Banner from "./components/Banner";
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <Nav />
+    <Nav />
       <Imagefollow
-        className="2xl:w-[350px] 2xl:h-[200px] lg:w-[250px] lg:h-[100px] w-[75px]  h-[100px] md:w-[200px]  md:h-[100px] pt-[75px] pt-[150px] md:absolute inset-y-48 right-10 absolute inset-y-0 right-10"
+        className="2xl:w-[350px] 2xl:h-[200px] lg:w-[200px] lg:h-[100px] w-[75px]  h-[100px] md:w-[120px]  md:h-[100px] pt-[75px] pt-[150px] md:absolute inset-y-48 right-10 absolute inset-y-7 right-[20px]"
         src={Pterodactyl}
         alt="Pterodactyl"
       />
       <Imagefollow
-        className="2xl:w-[350px] 2xl:h-[200px] g:w-[250px] lg:h-[100px] w-[75px]  h-[100px] md:w-[200px]  md:h-[100px] pt-[75px] pt-[150px] md:absolute inset-y-48 left-10 absolute inset-y-0 right-10"
+        className="2xl:w-[350px] 2xl:h-[200px] lg:w-[200px] lg:h-[100px] w-[75px]  h-[100px] md:w-[120px]  md:h-[100px] pt-[75px] pt-[150px] md:absolute inset-y-48 left-10 absolute inset-y-7 left-[20px]"
         src={FlippedPterodactyl}
         alt="Pterodactyl"
       />

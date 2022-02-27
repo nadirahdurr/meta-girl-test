@@ -41,7 +41,7 @@ const Header = () => {
         <div className="text-center">
           <p
             data-aos="zoom-in-up"
-            className="mt-1 text-[40px] md:text-[83px] font-extrabold text-[#231c0d] sm:tracking-tight 2xl:text-[160px] xl:text-[120px] lg:text-[100px]"
+            className="mt-10 text-[40px] md:text-[83px] font-extrabold text-[#231c0d] sm:tracking-tight 2xl:text-[160px] xl:text-[120px] lg:text-[100px]"
             style={{ fontFamily: "Orbitron" }}
           >
             <Gradient dir="left-to-right" from="black" to="#231c11">
@@ -49,7 +49,7 @@ const Header = () => {
             </Gradient>
           </p>
           <div
-            className="text-[#515340] xl:text-[20px] lg:text-[80%] text-[60%] md:mb-10"
+            className="text-[#515340] xl:text-[20px] lg:text-[100%] md:text-[90%] text-[60%] md:mb-10"
             style={{ fontFamily: "Libre Franklin" }}
           >
             {" "}
@@ -71,6 +71,15 @@ const Header = () => {
               }
             />
           </p>
+          <div className="flex justify-center tracking-wider font-bold text-[#231c0d] uppercase text-[10px] md:text-[22px]"
+            style={{ fontFamily: "Orbitron" }}>
+            Members only site coming soon! 
+          </div>
+          <div className="flex justify-center tracking-wider font-bold md:mt-3 mt-1 text-[#515340] uppercase text-[8px] md:text-[12px]"
+            style={{ fontFamily: "Libre Franklin" }}>
+            Digital Heart Reveal is on Sunday 02/27/22
+          </div>
+
           <div className="flex justify-center mt-5">
             <div className="pr-2">
               <button
@@ -109,7 +118,7 @@ const Header = () => {
           </div>
 
           <div
-            className="flex justify-center md:mb-14 mb-6 font-bold text-[#515340] uppercase text-[10px] md:text-[12px]"
+            className="flex justify-center md:mb-14 mb-6 font-bold text-[#515340] uppercase text-[8px] md:text-[12px]"
             style={{ fontFamily: "Libre Franklin" }}
           >
             {" "}
