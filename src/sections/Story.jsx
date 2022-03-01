@@ -9,7 +9,7 @@ const Story = () => {
   return (
     <div className="">
       <div
-        className="mt-2 mb-4 text-[14px] md:text-[45px] font-bold text-[#231c0d] sm:tracking-tight"
+        className="md:mt-2 mt-3 mb-4 text-[14px] md:text-[45px] font-bold text-[#231c0d] sm:tracking-tight"
         style={{ fontFamily: "Orbitron" }}
       >
         <button
