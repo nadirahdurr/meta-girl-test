@@ -78,10 +78,6 @@ const Header = () => {
             style={{ fontFamily: "Orbitron" }}>
             Members only site coming soon! 
           </div>
-          <div className="flex justify-center tracking-wider font-bold md:mt-3 mt-1 text-[#515340] uppercase text-[8px] md:text-[12px]"
-            style={{ fontFamily: "Libre Franklin" }}>
-            Digital Heart Reveal is on Sunday 02/27/22
-          </div>
 
           <div className="flex justify-center mt-5">
             <div className="pr-2">
