@@ -111,14 +111,14 @@ const Nav = () => {
               <div className="-mr-2 flex sm:hidden">
               <div className="pr-3">{renderConnectionButton(address)}</div>
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-[#231c0d] hover:text-[#231c0d] hover:bg-[#72eae8] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#231c0d] ">
+                {/* <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-[#231c0d] hover:text-[#231c0d] hover:bg-[#72eae8] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#231c0d] ">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
                     <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                   )}
-                </Disclosure.Button>
+                </Disclosure.Button> */}
               </div>
             </div>
           </div>

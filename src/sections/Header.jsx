@@ -6,6 +6,9 @@ import { MetaCard } from "../components/metaCard";
 import { MetaCardTwo } from "../components/metaCardTwo";
 import { MetaCardThree } from "../components/metaCardThree";
 import Aos from "aos";
+import { SiDiscord, SiTwitter } from "react-icons/si";
+import OpenseaIcon from "../assets/images/tranparent-opensea.png";
+
 import "aos/dist/aos.css";
 import Gradient from "rgt";
 import Story from "./Story";
@@ -79,8 +82,25 @@ const Header = () => {
             style={{ fontFamily: "Libre Franklin" }}>
             Digital Heart Reveal is on Sunday 02/27/22
           </div>
+          <div className="flex justify-center mt-3 sm:hidden">
+                <a href="https://discord.com/invite/Gsgd78aswK" target="_blank">
+                  <SiDiscord
+                    className="cursor-pointer text-[#231c0d] md:text-2xl text-xl"
+                    alt="METAGIRL Discord"
+                  />
+                </a>
+                <a href="https://twitter.com/metagirldh" target="_blank">
+                  <SiTwitter
+                    className="cursor-pointer ml-2 text-[#231c0d] md:text-2xl text-lg"
+                    alt="METAGIRL Twitter"
+                  />
+                </a>
+                <a href="https://opensea.io/collection/metagirldh" target="_blank">
+                  <input className="md:h-6 md:w-6 ml-2 h-5 h-5" type="image" src={OpenseaIcon} />
+                </a>
+              </div>
 
-          <div className="flex justify-center mt-5">
+          <div className="flex justify-center md:mt-5 mt-3">
             <div className="pr-2">
               <button
                 className="rounded-lg bg-[#231c11] md:text-[20px] text-[#f2e2d3] font-bold w-10 h-10"
