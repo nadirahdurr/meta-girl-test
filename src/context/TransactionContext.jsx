@@ -200,8 +200,10 @@ export const TransactionProvider = ({ children }) => {
       if (!provider) {
         return;
       } else {
+        console.log(provider)
         const accounts = await provider.listAccounts();
-        if (accounts.length) {
+        console.log('acccounts', accounts)
+        if (accounts.length >=0) {
           dispatch({
             type: "SET_ADDRESS",
             address: address[0],
@@ -224,15 +226,19 @@ export const TransactionProvider = ({ children }) => {
       const signer = web3Provider.getSigner();
       const address = await signer.getAddress();
       const network = await web3Provider.getNetwork();
-
+    
       dispatch({
         type: "SET_WEB3_PROVIDER",
         provider: provider,
         web3Provider: web3Provider,
-        address: address[0],
         chainId: network.chainId,
         connected: true,
       });
+
+      dispatch({
+        type:"SET_ADDRESS",
+        address:address
+      })
 
       dispatch({
         type: "RENDER_ALERT",
@@ -331,9 +337,11 @@ export const TransactionProvider = ({ children }) => {
 
   const disconnectWallet = useCallback(
     async function () {
-      if (address == undefined) {
-        connectWallet();
-      } else {
+      dispatch({
+        type:'SET_ADDRESS',
+        address:null
+      })
+
         await web3Modal.clearCachedProvider();
         if (provider?.disconnect && typeof provider.disconnect === "function") {
           await provider.disconnect();
@@ -341,7 +349,6 @@ export const TransactionProvider = ({ children }) => {
         dispatch({
           type: "RESET_WEB3_PROVIDER",
         });
-      }
     },
     [state.provider]
   );
@@ -389,7 +396,7 @@ export const TransactionProvider = ({ children }) => {
         }
       };
     }
-  }, [provider, disconnectWallet]);
+  }, []);
 
   return (
     <TransactionContext.Provider

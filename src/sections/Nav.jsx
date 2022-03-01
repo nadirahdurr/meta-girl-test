@@ -30,7 +30,7 @@ const Nav = () => {
       <button
         style={{ fontFamily: "Orbitron" }}
         onClick={connectWallet}
-        className="bg-[#231c11] text-[#f2e2d3] font-bold w-[160px] h-[60px] rounded-md"
+        className="bg-[#231c11] text-[#f2e2d3] md:text-lg text-[12px] font-bold md:w-[160px] md:h-[60px] w-[120px] h-[40px] rounded-md"
       >
         connect wallet
       </button>
@@ -38,7 +38,7 @@ const Nav = () => {
       <button
         style={{ fontFamily: "Orbitron" }}
         onClick={disconnectWallet}
-        className="bg-[#231c11] text-lg text-[#f2e2d3] font-bold w-[190px] h-[60px] rounded-md"
+        className="bg-[#231c11] md:text-lg text-[12px] text-[#f2e2d3] font-bold md:w-[160px] md:h-[60px] w-[120px] h-[40px] rounded-md"
       >
         {str == undefined
           ? "connect wallet"
@@ -109,8 +109,9 @@ const Nav = () => {
                 </div>
               </div>
               <div className="-mr-2 flex sm:hidden">
+              <div className="pr-3">{renderConnectionButton(address)}</div>
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-[#231c0d] hover:text-[#231c0d] hover:bg-[#72eae8] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#231c0d]">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-[#231c0d] hover:text-[#231c0d] hover:bg-[#72eae8] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#231c0d] ">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -122,7 +123,7 @@ const Nav = () => {
             </div>
           </div>
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-2 pt-2  space-y-1">
               {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
               {/* <Disclosure.Button
                 as="a"
@@ -134,7 +135,6 @@ const Nav = () => {
             </div>
             <div className="pt-4 pb-3 border-t border-gray-700">
               <div className="flex justify-center items-center px-5">
-                <div className="">{renderConnectionButton(address)}</div>
                 <div className="ml-3"></div>
               </div>
               <div className="flex justify-center mt-3">
