@@ -10,7 +10,7 @@ const Roadmap = () => {
   return (
     <div className="">
       <div
-        className="md:mb-2 text-[20px] md:text-[50px] font-bold text-[#231c0d] sm:tracking-tight"
+        className="md:mb-2 -md:m-2 text-[20px] md:text-[50px] font-bold text-[#231c0d] sm:tracking-tight"
         style={{ fontFamily: "Orbitron" }}
       >
         <center>PULSE 1.0</center>

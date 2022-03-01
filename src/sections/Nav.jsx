@@ -93,18 +93,18 @@ const Nav = () => {
                     target="_blank"
                   >
                     <SiDiscord
-                      className="cursor-pointer text-[#231c0d] text-2xl"
+                      className="cursor-pointer mr-2 text-[#231c0d] text-2xl"
                       alt="METAGIRL Discord"
                     />
                   </a>
                   <a href="https://twitter.com/metagirldh" target="_blank">
                     <SiTwitter
-                      className="cursor-pointer  text-[#231c0d] text-2xl"
+                      className="cursor-pointer text-[#231c0d] text-2xl"
                       alt="METAGIRL Twitter"
                     />
                   </a>
                   <a href="https://opensea.io/collection/metagirldh" target="_blank">
-                  <input className="h-6 w-6 mt-1" type="image" src={OpenseaIcon} />
+                  <input className="h-10 w-10 mt-2" type="image" src={OpenseaIcon} />
                 </a>
                 </div>
               </div>
@@ -151,7 +151,7 @@ const Nav = () => {
                   />
                 </a>
                 <a href="https://opensea.io/collection/metagirldh" target="_blank">
-                  <input className="h-6 w-6 ml-2" type="image" src={OpenseaIcon} />
+                  <input className="h-7 w-7 ml-2" type="image" src={OpenseaIcon} />
                 </a>
               </div>
               

@@ -142,7 +142,7 @@ const Header = () => {
                   />
                 </a>
                 <a href="https://opensea.io/collection/metagirldh" target="_blank">
-                  <input className="md:h-6 md:w-6 ml-2 h-5 h-5" type="image" src={OpenseaIcon} />
+                  <input className="w-7 h-7 -mt-[4px] ml-1 " type="image" src={OpenseaIcon} />
                 </a>
               </div>
           <Story />
