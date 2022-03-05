@@ -83,7 +83,7 @@ const Header = () => {
             <div className="pr-2">
               <button
                 className="hover:bg-[#342b17] rounded-lg bg-[#231c11] md:text-[20px] text-[#f2e2d3] font-bold w-10 h-10
-                hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/70 hover:ring-2 ring-[#342b17]/50"
+                hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/80"
                 onClick={handleDecrementClick}
               >
                 -
@@ -101,7 +101,7 @@ const Header = () => {
             <div className="pl-2">
               <button
                 className="hover:bg-[#342b17] rounded-lg bg-[#231c11] md:text-[20px] text-[#f2e2d3] 
-                font-bold md:w-25 w-10 h-10 hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/70 hover:ring-2 ring-[#342b17]/50"
+                font-bold md:w-25 w-10 h-10 hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/80"
                 onClick={handleIncrementClick}
               >
                 +
@@ -112,7 +112,7 @@ const Header = () => {
             <button
               onClick={mintMetaHeart}
               className="bg-[#231c11] text-[#f2e2d3] font-bold w-[180px] h-[50px] md:w-[200px] 
-              md:h-[65px] md:text-lg text-xs rounded-md hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/70 hover:ring-2 ring-[#342b17]/50"
+              md:h-[65px] md:text-lg text-xs rounded-md hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/80"
               style={{ fontFamily: "Orbitron" }}
             >
               MINT

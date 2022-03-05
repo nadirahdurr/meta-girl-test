@@ -31,7 +31,7 @@ const Nav = () => {
         style={{ fontFamily: "Orbitron" }}
         onClick={connectWallet}
         className="bg-[#231c11] text-[#f2e2d3] md:text-lg text-[12px] font-bold md:w-[160px] md:h-[60px] w-[120px] h-[40px] 
-        rounded-md hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/70 hover:ring-2 ring-[#342b17]/50"
+        rounded-md hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/80"
       >
         connect wallet
       </button>
@@ -40,7 +40,7 @@ const Nav = () => {
         style={{ fontFamily: "Orbitron" }}
         onClick={disconnectWallet}
         className="bg-[#231c11] md:text-lg text-[12px] text-[#f2e2d3] font-bold md:w-[160px] md:h-[60px] 
-        w-[120px] h-[40px] rounded-md hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/70 hover:ring-2 ring-[#342b17]/50"
+        w-[120px] h-[40px] rounded-md hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]/80"
       >
         {str == undefined
           ? "connect wallet"
