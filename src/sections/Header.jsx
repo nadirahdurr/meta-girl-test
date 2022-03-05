@@ -83,7 +83,7 @@ const Header = () => {
             <div className="pr-2">
               <button
                 className="hover:bg-[#342b17] rounded-lg bg-[#231c11] md:text-[20px] text-[#f2e2d3] font-bold w-10 h-10
-                hover:bg-[#342b17]/90 active:outline outline-offset-1 outline-[#342b17]"
+                hover:bg-[#342b17]"
                 onClick={handleDecrementClick}
               >
                 -
