@@ -1,4 +1,4 @@
-import roadmap from "../assets/images/Metagirl_Roadmap.png";
+import roadmap from "../assets/images/Metagirl_Roadmap1.0.png";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";

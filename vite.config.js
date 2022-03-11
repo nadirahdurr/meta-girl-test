@@ -12,10 +12,10 @@ import NodeGlobalsPolyfillPlugin from "@esbuild-plugins/node-globals-polyfill";
 export default defineConfig({
   build: {
     define: {
-      // process: {env: {}},
     },
     rollupOptions: {
-      plugins: [inject({ Buffer: ["buffer", "Buffer"] })],
+      plugins: [inject({ Buffer: ["buffer", "Buffer"] })
+    ],
       define: {
         process: {env:{}},
     },
@@ -51,7 +51,7 @@ export default defineConfig({
       plugins: [
         NodeGlobalsPolyfillPlugin({
           buffer: true,
-        }),
+        })
       ],
     },
   },
