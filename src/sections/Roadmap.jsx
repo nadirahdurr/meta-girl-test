@@ -13,7 +13,7 @@ const Roadmap = () => {
         className="md:mb-2 -md:m-2 text-[20px] md:text-[50px] font-bold text-[#231c0d] sm:tracking-tight"
         style={{ fontFamily: "Orbitron" }}
       >
-        <center>PULSE 1.0</center>
+        <center>PULSE 1.0 </center>
       </div>
       <center>
         <img
